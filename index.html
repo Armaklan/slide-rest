@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <style type="text/css">
+      /* Slideshow styles */
+
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { 
+        font-size: 4em;
+      }
+      h2 { 
+        font-size: 2em; 
+      }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1 {
+        line-height: 0.8em;
+      }
+
+      .inverse h2 {
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+
+      h1 {
+
+      }
+
+      h2 {
+
+      }
+
+      .inverse h1 {
+
+      }
+
+      .inverse h2 {
+        
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# N'oubliez pas le ReST
+Par ZUBER Lionel
+
+---
+
+class: middle, center, inverse
+
+# Mini-Quizz
+## ReST ou pas ReST ?
+
+---
+
+## Requête
+
+```XML
+<?xml version="1.0"?>
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2001/12/soap-envelope"
+soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+ <soap:body pb="http://www.acme.com/phonebook">
+  <pb:GetUserDetails>
+   <pb:UserID>12345</pb:UserID>
+  </pb:GetUserDetails>
+ </soap:Body>
+</soap:Envelope>
+```
+
+---
+
+## Requête
+
+```HTTP
+GET http://www.acme.com/phonebook/UserDetails/12345
+```
+
+## Réponse
+
+```JSON
+{
+  name: 'ACME Boomerang',
+  desc: 'Used by Coyote in <i>Zoom at the Top</i>, 1962',
+  price: {
+      currency: 'usd',
+      quantity: '1',
+  },
+}
+```
+
+---
+
+## Requête
+
+```HTTP
+GET http://www.acme.com/phonebook/UserDetails/12345
+```
+
+## Réponse
+
+```XML
+<parts-list>
+ <part id="3322">
+  <name>ACME Boomerang</name>
+  <desc>
+   Used by Coyote in <i>Zoom at the Top</i>, 1962
+  </desc>
+  <price currency="usd" quantity="1">17.32</price>
+  <uri>http://www.acme.com/parts/3322</uri>
+ </part>
+</parts-list>
+```
+
+---
+
+## API
+
+```HTTP
+GET     http://www.acme.com/product               // Renvoi la liste des produits
+GET     http://www.acme.com/product/123           // Renvoi le produit 123
+POST    http://www.acme.com/product/create        // Créé le produit
+PUT     http://www.acme.com/product/update/123    // Met à jour le produit
+GET     http://www.acme.com/product/delete        // Supprime le produit
+```
+
+---
+
+## API
+
+```XML
+GET     http://www.acme.com/product         // Renvoi la liste des produits
+GET     http://www.acme.com/product?type=1  // Renvoi la liste des produits de type 1
+GET     http://www.acme.com/product/123     // Renvoi le produit 123
+POST    http://www.acme.com/product         // Créé le produit et le renvoi à jour
+PUT     http://www.acme.com/product         // Met à jour le produit
+DELETE  http://www.acme.com/product         // Supprime le produit
+```
+---
+
+class: middle, center, inverse
+
+# Du reste au ReST
+
+---
+
+class: middle, center
+
+# Web Service
+
+---
+
+class: middle, center
+
+# Protocol HTTP
+
+---
+
+class: middle, center
+
+# On parle de Resources
+
+---
+
+class: middle, center
+
+# Stateless
+
+---
+
+class: middle, center, inverse
+
+# Et dans la vrai vie ?
+
+---
+
+class: middle, center
+
+# Authentification
+
+---
+
+class: middle, center
+
+# Cache
+
+---
+
+class: middle, center
+
+# Documentation
+
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+ </body>
+</html>
