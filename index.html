@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>N'oubliez pas le ReST</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://localhost:35729/livereload.js"></script>
+    <link rel="stylesheet" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http:////cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+    </link>
     <style type="text/css">
       /* Slideshow styles */
 
@@ -126,6 +129,13 @@
         padding-top: 1em;
       }
 
+      .big-icon {
+        font-size: 5em;
+      }
+
+      .light-red {
+        color: #C53;
+      }
 
       h1 {
 
@@ -148,19 +158,22 @@
   <body>
     <textarea id="source">
 
-class: center, middle
+class: center, middle, animated slideInRight
 
 # N'oubliez pas le ReST
 Par ZUBER Lionel
 
 ---
 
-class: middle, center, inverse
+class: middle, center, inverse, animated slideInRight
 
 # Mini-Quizz
 ## ReST ou pas ReST ?
+.fa.fa-question-circle.big-icon.light-red[]
 
 ---
+
+class: animated slideInRight
 
 ## Requête
 
@@ -179,10 +192,12 @@ soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
 
 ---
 
+class: animated slideInRight
+
 ## Requête
 
 ```HTTP
-GET http://www.acme.com/phonebook/UserDetails/12345
+GET phonebook/UserDetails/12345 HTTP/1.1
 ```
 
 ## Réponse
@@ -200,10 +215,12 @@ GET http://www.acme.com/phonebook/UserDetails/12345
 
 ---
 
+class: animated slideInRight
+
 ## Requête
 
 ```HTTP
-GET http://www.acme.com/phonebook/UserDetails/12345
+GET phonebook/UserDetails/12345 HTTP/1.1
 ```
 
 ## Réponse
@@ -223,79 +240,84 @@ GET http://www.acme.com/phonebook/UserDetails/12345
 
 ---
 
+class: animated slideInRight
+
 ## API
 
 ```HTTP
-GET     http://www.acme.com/product               // Renvoi la liste des produits
-GET     http://www.acme.com/product/123           // Renvoi le produit 123
-POST    http://www.acme.com/product/create        // Créé le produit
-PUT     http://www.acme.com/product/update/123    // Met à jour le produit
-GET     http://www.acme.com/product/delete        // Supprime le produit
+GET     product               // Renvoi la liste des produits
+GET     product/123           // Renvoi le produit 123
+POST    product/search        // Renvoi une liste de produits filtrées
+POST    product/create        // Créé le produit
+PUT     product/update/123    // Met à jour le produit
+GET     product/delete        // Supprime le produit
 ```
 
 ---
+
+class: animated slideInRight
 
 ## API
 
-```XML
-GET     http://www.acme.com/product         // Renvoi la liste des produits
-GET     http://www.acme.com/product?type=1  // Renvoi la liste des produits de type 1
-GET     http://www.acme.com/product/123     // Renvoi le produit 123
-POST    http://www.acme.com/product         // Créé le produit et le renvoi à jour
-PUT     http://www.acme.com/product         // Met à jour le produit
-DELETE  http://www.acme.com/product         // Supprime le produit
+```HTTP
+GET     product         // Renvoi la liste des produits
+GET     product?type=1  // Renvoi la liste des produits de type 1
+GET     product/123     // Renvoi le produit 123
+POST    product         // Créé le produit et le renvoi à jour
+PUT     product         // Met à jour le produit
+DELETE  product         // Supprime le produit
 ```
 ---
 
-class: middle, center, inverse
+class: middle, center, inverse animated slideInRight
 
 # Du reste au ReST
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Web Service
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Protocol HTTP
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # On parle de Resources
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Stateless
 
 ---
 
-class: middle, center, inverse
+class: middle, center, inverse animated slideInRight
 
 # Et dans la vrai vie ?
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Authentification
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Cache
 
 ---
 
-class: middle, center
+class: middle, center animated slideInRight
 
 # Documentation
 
@@ -304,7 +326,16 @@ class: middle, center
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      
+      var slideshow = remark.create({
+        ratio: '16:9',
+        highlightStyle: 'monokai'
+      }) ;
+
+/*      var slideshow = remark.create({
+        highlightStyle: 'github'
+      }) ;*/
+    
     </script>
  </body>
 </html>
