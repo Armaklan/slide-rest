@@ -335,6 +335,30 @@ class: middle, center animated slideInRight
 /*      var slideshow = remark.create({
         highlightStyle: 'github'
       }) ;*/
+
+
+    var keyboardEvent = document.createEvent("KeyboardEvent");
+    var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
+
+
+     document.onkeyup = MykeyUpEvent;
+
+     function MykeyUpEvent(event) {
+        if (event.metaKey || event.ctrlKey) {
+          // Bail out if meta or ctrl key was pressed
+          return;
+        }
+
+        // Remap black screen button to toggleFullScreen
+        switch (event.keyCode) {
+          case 186:
+            slideshow.toggleFullscreen();
+            break;
+        }
+
+
+     }
+
     
     </script>
  </body>
