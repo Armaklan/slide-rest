@@ -366,6 +366,8 @@ class: middle, center, animated, slideInRight
 
 # Resources
 
+# 1 URL = 1 objets
+
 ---
 
 class: middle, animated, slideInRight
@@ -389,13 +391,18 @@ class: middle, center animated slideInRight inverse
 
 class: middle, animated, slideInRight
 
-# Verbe = Action
 
-- GET : Recherche ou récupération
-- POST : Ajout d'un élement
-- PUT : Mise à jour d'un élement
-- DELETE : Suppression d'un élement
-- PATCH : Mise à jour partielle
+# Actions = Verbes HTTP
+
+```HTTP
+GET /{id}   Récupération d'un objet
+GET /       Recherche
+PUT /       Mise à jour
+POST /      Nouvel objet
+DELETE /    Suppression
+PATCH /     Mise à jour partielle
+...
+```
 
 ---
 
@@ -409,33 +416,6 @@ class: middle, animated, slideInRight
 - `418` I'm a teapot
 - `204` No Content
 - ...
-
----
-
-class: middle, center animated slideInRight inverse
-
-# Resources
-
----
-
-class: middle, center, animated, slideInRight
-
-# 1 URL = 1 objets
-
----
-
-class: middle animated slideInRight
-
-# Actions = Verbes HTTP
-
-```HTTP
-GET /{id}   Récupération d'un objet
-GET /       Recherche
-PUT /       Mise à jour
-POST /      Nouvel objet
-DELETE /    Suppression
-...
-```
 
 ---
 
