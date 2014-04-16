@@ -6,19 +6,22 @@
     <script src="http://localhost:35729/livereload.js"></script>
     <link rel="stylesheet" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="http:////cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+
+
     </link>
     <style type="text/css">
       /* Slideshow styles */
 
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-
       body {
-        font-family: 'Droid Serif';
+        font-family: 'Cabin', Helvetica, Arial, sans-serif;
         font-size: 20px;
       }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Lobster', Georgia, Times, serif;
+               
         font-weight: 400;
         margin-bottom: 0;
       }
@@ -66,8 +69,6 @@
         padding: 15px;
       }
       .inverse {
-        background: #272822;
-        color: #777872;
         text-shadow: 0 0 20px #333;
       }
       .inverse h1 {
@@ -133,8 +134,34 @@
         font-size: 5em;
       }
 
-      .light-red {
-        color: #C53;
+      
+
+
+      body {
+        background-color: #E3CDA4;
+        color: black;
+
+      }
+
+      body .red {
+          color: #F94444;
+      }
+
+      .inverse {
+        background: #2F343B;
+        color: #E3CDA4;
+      }
+  
+      .inverse .red {
+          color: #C77966;
+      }
+
+      .inverse .grey {
+        color: #7E827A;
+      }
+
+      .inverse .blue {
+        color: #628E86;
       }
 
       h1 {
@@ -171,8 +198,8 @@ class: center, middle, animated slideInRight
 
 class: center, middle, inverse, animated slideInRight
 
-# 14 Présentations
-# 40 Personnes
+# .red[14] Présentations
+# .red[40] Personnes
 
 ---
 
@@ -195,22 +222,22 @@ class: center, middle, inverse animated slideInRight
 
 # Sujets ?
 
-## Fonctionnel, Technologique, Managériale !
+## .grey[Technologique], .red[Fonctionnel], .blue[Managériale] !
 
 ---
 
 class: center, middle, animated slideInRight
 
-# N'oubliez pas le ReST
+# N'oubliez pas le .red[ReST]
 Par ZUBER Lionel
 
 ---
 
 class: middle, center, inverse, animated slideInRight
 
-# Mini-Quizz
+# .red[Mini-Quizz]
 ## ReST ou pas ReST ?
-.fa.fa-question-circle.big-icon.light-red[]
+.fa.fa-question-circle.big-icon.blue[]
 
 ---
 
@@ -286,12 +313,12 @@ class: animated slideInRight
 ## API
 
 ```HTTP
-GET     product               // Renvoi la liste des produits
-GET     product/123           // Renvoi le produit 123
-POST    product/search        // Renvoi une liste de produits filtrées
-POST    product/create        // Créé le produit
-PUT     product/update/123    // Met à jour le produit
-GET     product/delete        // Supprime le produit
+GET     products               // Renvoi la liste des produits
+GET     products/123           // Renvoi le produit 123
+POST    products/search        // Renvoi une liste de produits filtrées
+POST    products/create        // Créé le produit
+PUT     products/update/123    // Met à jour le produit
+GET     products/delete        // Supprime le produit
 ```
 
 ---
@@ -301,30 +328,31 @@ class: animated slideInRight
 ## API
 
 ```HTTP
-GET     product         // Renvoi la liste des produits
-GET     product?type=1  // Renvoi la liste des produits de type 1
-GET     product/123     // Renvoi le produit 123
-POST    product         // Créé le produit et le renvoi à jour
-PUT     product         // Met à jour le produit
-DELETE  product         // Supprime le produit
+GET     products         // Renvoi la liste des produits
+GET     products?type=1  // Renvoi la liste des produits de type 1
+GET     products/123     // Renvoi le produit 123
+POST    products         // Créé le produit et le renvoi à jour
+PUT     products         // Met à jour le produit
+DELETE  products         // Supprime le produit
 ```
 ---
 
 class: middle, center, inverse animated slideInRight
 
-# Du reste au ReST
+# Du reste au .red[ReST]
 
 ---
 
 class: middle, center animated slideInRight inverse
 
-# Architecture Client-Serveur
+# Architecture 
+# Client-Serveur
 
 ---
 
 class: middle, center animated slideInRight
 
-## Browser en tant que Client
+## .red[Browser] en tant que Client
 
 ![Client to Server](img/cli-serv.png)
 
@@ -332,7 +360,7 @@ class: middle, center animated slideInRight
 
 class: middle, center animated slideInRight
 
-## Serveur en tant que Client
+## .red[Serveur] en tant que Client
 
 ![Client to Server](img/serv-serv.png)
 
@@ -346,7 +374,7 @@ class: middle, center animated slideInRight, inverse
 
 class: middle, center animated slideInRight
 
-# Pas de dépendance entre appel
+# Pas de .red[dépendance] entre appel
 
 ---
 
@@ -364,34 +392,36 @@ class: middle, center animated slideInRight, inverse
 
 class: middle, center, animated, slideInRight
 
-# Resources
+# .red[Resources]
 ## 1 URL = 1 objets
 
 ---
 
 class: middle, animated, slideInRight
 
+# Resource .red[Product]
+
 ```HTTP
-GET     product         // Renvoi la liste des produits
-GET     product?type=1  // Renvoi la liste des produits de type 1
-GET     product/123     // Renvoi le produit 123
-POST    product         // Créé le produit et le renvoi à jour
-PUT     product         // Met à jour le produit
-DELETE  product         // Supprime le produit
+GET     products         // Renvoi la liste des produits
+GET     products?type=1  // Renvoi la liste des produits de type 1
+GET     products/123     // Renvoi le produit 123
+POST    products         // Créé le produit et le renvoi à jour
+PUT     products         // Met à jour le produit
+DELETE  products         // Supprime le produit
 ```
 
 ---
 
 class: middle, center animated slideInRight inverse
 
-# Proche de HTTP
+# Proche de .red[HTTP]
 
 ---
 
 class: middle, animated, slideInRight
 
 
-# Actions = Verbes HTTP
+# Actions = .red[Verbes] HTTP
 
 ```HTTP
 GET /{id}   Récupération d'un objet
@@ -402,12 +432,10 @@ DELETE /    Suppression
 PATCH /     Mise à jour partielle
 ...
 ```
-
----
-
+ 
 class: middle, animated, slideInRight
 
-# Code Retour HTTP
+# Code .red[Retour] HTTP
 
 - `200` OK
 - `404` Not Found
@@ -442,9 +470,9 @@ class: middle, center animated slideInRight
 
 # Tokens
 
-Dans l'url... Ou mieux, dans le HEADER !
+### Dans l'url... Ou mieux, dans le .red[__header__] !
 
-Cf OAuth !
+###Protocole .red[oAuth]
 
 ---
 
@@ -504,8 +532,8 @@ class: middle, center animated slideInRight
 
 # WSDL
 
-Assez lourd...
-Adapté à du Soap, pas du Rest
+### Assez lourd...
+### Adapté à du .red[Soap], pas du Rest
 
 ---
 
@@ -542,11 +570,9 @@ class: middle, center, animated slideInRight inverse
 
 # Hypermedia
 
-## Du lien dans votre REST
-
+## Du .red[lien] dans votre REST
 
 ---
-
 
 class: middle, animated slideInRight
 
@@ -567,7 +593,6 @@ class: middle, animated slideInRight
 ```
 
 ---
-
 
 class: middle, animated slideInRight
 
@@ -593,7 +618,7 @@ class: middle, center, animated slideInRight inverse
 
 # That's all folks !
 
-#### Creer avec Remark.js
+#### Created using <a href="http://remarkjs.com/">Remark.js</a>
 
 
 
