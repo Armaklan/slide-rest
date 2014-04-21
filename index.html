@@ -6,19 +6,22 @@
     <script src="http://localhost:35729/livereload.js"></script>
     <link rel="stylesheet" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="http:////cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+
+
     </link>
     <style type="text/css">
       /* Slideshow styles */
 
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-
       body {
-        font-family: 'Droid Serif';
+        font-family: 'Cabin', Helvetica, Arial, sans-serif;
         font-size: 20px;
       }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Lobster', Georgia, Times, serif;
+               
         font-weight: 400;
         margin-bottom: 0;
       }
@@ -66,8 +69,6 @@
         padding: 15px;
       }
       .inverse {
-        background: #272822;
-        color: #777872;
         text-shadow: 0 0 20px #333;
       }
       .inverse h1 {
@@ -133,8 +134,34 @@
         font-size: 5em;
       }
 
-      .light-red {
-        color: #C53;
+      
+
+
+      body {
+        background-color: #E3CDA4;
+        color: black;
+
+      }
+
+      body .red {
+          color: #F94444;
+      }
+
+      .inverse {
+        background: #2F343B;
+        color: #E3CDA4;
+      }
+  
+      .inverse .red {
+          color: #C77966;
+      }
+
+      .inverse .grey {
+        color: #7E827A;
+      }
+
+      .inverse .blue {
+        color: #628E86;
       }
 
       h1 {
@@ -153,6 +180,11 @@
         
       }
 
+      .remark-slide img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+
     </style>
   </head>
   <body>
@@ -160,16 +192,59 @@
 
 class: center, middle, animated slideInRight
 
-# N'oubliez pas le ReST
-Par ZUBER Lionel
+# Knowledge Sharing
+
+---
+
+class: center, middle, inverse, animated slideInRight
+
+.fa.fa-bar-chart-o.big-icon.blue[]
+
+# .red[14] Présentations
+# .red[40] Personnes
+
+---
+
+class: center, middle, animated slideInRight
+
+![We need you !](img/need.jpg)
+
+---
+
+class: center, middle, inverse animated slideInRight
+
+ .fa.fa-question-circle.big-icon[]
+
+## .red[Sébastien Bouchet]
+## .blue[Lionel Zuber]
+
+---
+
+class: center, middle, inverse animated slideInRight
+
+# Sujets ?
+
+.fa.fa-code-fork.big-icon[] 
+
+## .grey[Technologique], .red[Fonctionnel], .blue[Managériale] !
+
+---
+
+class: center, middle, animated slideInRight
+
+# N'oubliez pas le .red[ReST]
+
+.fa.fa-exchange.big-icon[]
+
+### Par ZUBER Lionel
 
 ---
 
 class: middle, center, inverse, animated slideInRight
 
-# Mini-Quizz
+# .red[Mini-Quizz]
 ## ReST ou pas ReST ?
-.fa.fa-question-circle.big-icon.light-red[]
+.fa.fa-question-circle.big-icon.blue[]
 
 ---
 
@@ -245,12 +320,12 @@ class: animated slideInRight
 ## API
 
 ```HTTP
-GET     product               // Renvoi la liste des produits
-GET     product/123           // Renvoi le produit 123
-POST    product/search        // Renvoi une liste de produits filtrées
-POST    product/create        // Créé le produit
-PUT     product/update/123    // Met à jour le produit
-GET     product/delete        // Supprime le produit
+GET     products               // Renvoi la liste des produits
+GET     products/123           // Renvoi le produit 123
+POST    products/search        // Renvoi une liste de produits filtrées
+POST    products/create        // Créé le produit
+PUT     products/update/123    // Met à jour le produit
+GET     products/delete        // Supprime le produit
 ```
 
 ---
@@ -260,66 +335,314 @@ class: animated slideInRight
 ## API
 
 ```HTTP
-GET     product         // Renvoi la liste des produits
-GET     product?type=1  // Renvoi la liste des produits de type 1
-GET     product/123     // Renvoi le produit 123
-POST    product         // Créé le produit et le renvoi à jour
-PUT     product         // Met à jour le produit
-DELETE  product         // Supprime le produit
+GET     products         // Renvoi la liste des produits
+GET     products?type=1  // Renvoi la liste des produits de type 1
+GET     products/123     // Renvoi le produit 123
+POST    products         // Créé le produit et le renvoi à jour
+PUT     products         // Met à jour le produit
+DELETE  products         // Supprime le produit
 ```
 ---
 
 class: middle, center, inverse animated slideInRight
 
-# Du reste au ReST
+# Du reste au .red[ReST]
+
+---
+
+class: middle, center animated slideInRight inverse
+
+# Architecture 
+# Client-Serveur
+
+### .fa.fa-sitemap.big-icon.blue[]
 
 ---
 
 class: middle, center animated slideInRight
 
-# Web Service
+## .red[Browser] en tant que Client
+
+![Client to Server](img/cli-serv.png)
 
 ---
 
 class: middle, center animated slideInRight
 
-# Protocol HTTP
+## .red[Serveur] en tant que Client
+
+![Client to Server](img/serv-serv.png)
 
 ---
 
-class: middle, center animated slideInRight
-
-# On parle de Resources
-
----
-
-class: middle, center animated slideInRight
+class: middle, center animated slideInRight, inverse
 
 # Stateless
 
 ---
 
-class: middle, center, inverse animated slideInRight
+class: middle, center animated slideInRight
 
-# Et dans la vrai vie ?
+# Pas de .red[dépendance] entre appel
+
+### .fa.fa-random.big-icon.red[]
 
 ---
 
 class: middle, center animated slideInRight
+
+# Deux appels 
+# =
+# .red[Un] résultat
+
+---
+
+class: middle, center animated slideInRight, inverse
+
+# Interface Uniforme
+
+---
+
+class: middle, center, animated, slideInRight
+
+# .red[Resources]
+## 1 URL = 1 objets
+
+---
+
+class: middle, animated, slideInRight
+
+# Resource .red[Product]
+
+```HTTP
+GET     products         // Renvoi la liste des produits
+GET     products?type=1  // Renvoi la liste des produits de type 1
+GET     products/123     // Renvoi le produit 123
+POST    products         // Créé le produit et le renvoi à jour
+PUT     products         // Met à jour le produit
+DELETE  products         // Supprime le produit
+```
+
+---
+
+class: middle, center animated slideInRight inverse
+
+# Proche de .red[HTTP]
+
+---
+
+class: middle, animated, slideInRight
+
+
+# Actions = .red[Verbes] HTTP
+
+```HTTP
+GET /{id}   Récupération d'un objet
+GET /       Recherche
+PUT /       Mise à jour
+POST /      Nouvel objet
+DELETE /    Suppression
+PATCH /     Mise à jour partielle
+...
+```
+
+---
+
+class: middle, animated, slideInRight
+
+# Code .red[Retour] HTTP
+
+- `200` OK
+- `404` Not Found
+- `403` Forbidden
+- `418` I'm a teapot
+- `204` No Content
+- ...
+
+### <a href="http://fr.wikipedia.org/wiki/Liste_des_codes_HTTP">RTF Wikipedia</a>
+
+---
+
+class: middle, center, inverse animated slideInRight
+
+# How To ...
+
+---
+
+class: middle, center animated slideInRight inverse
 
 # Authentification
 
+.fa.fa-users.big-icon.blue[]
+
 ---
 
 class: middle, center animated slideInRight
+
+# Session
+
+### Arg... Le .red[stateless] !
+
+---
+
+class: middle, center animated slideInRight
+
+# Tokens
+
+### Dans l'url... Ou mieux, dans le .red[__header__] !
+
+###Protocole .red[oAuth]
+
+---
+
+class: middle, center animated slideInRight inverse
+
+# Versionning
+
+### Pour les API public !
+
+---
+
+class: middle, center animated slideInRight
+
+# Dans l'url
+
+http://myhost/.red[v1]/chiens
+
+---
+
+class: middle, center animated slideInRight
+
+# Dans le header
+
+```HTTP
+Accept:application/vnd.example.v1+json
+```
+
+---
+
+class: middle, center animated slideInRight inverse
 
 # Cache
 
+.fa.fa-cloud-download.big-icon[]
+
+```HTTP
+Cache-Control: public; max-age=3600
+```
+
+---
+
+class: middle, center animated slideInRight, inverse
+
+# Documentation
+
+.fa.fa-align-left.big-icon.blue[]
+
 ---
 
 class: middle, center animated slideInRight
 
-# Documentation
+# HTML !
+
+###Peu de standardisation...
+
+---
+
+class: middle, center animated slideInRight
+
+# WSDL
+
+### Assez lourd...
+### Adapté à du .red[Soap], pas du Rest
+
+---
+
+class: middle, animated slideInRight
+
+# WADL
+
+```XML
+<method name="GET" id="ItemSearch">
+ <request>
+  <param name="Service" style="query"
+   fixed="AWSECommerceService"/>
+  <param name="Version" style="query" fixed="2005-07-26"/>
+  <param name="Operation" style="query" fixed="ItemSearch"/>
+  <param name="SubscriptionId" style="query"
+   type="xsd:string" required="true"/>
+  <param name="SearchIndex" style="query"
+   type="aws:SearchIndexType" required="true">
+    <option value="Books"/>
+    <option value="DVD"/>
+    <option value="Music"/>
+  </param>
+ </request>
+ <response>
+  <representation mediaType="text/xml"
+   element="aws:ItemSearchResponse"/>
+ </response>
+</method>
+```
+
+---
+
+class: middle, center, animated slideInRight inverse
+
+# Hypermedia
+
+## Du .red[lien] dans votre REST
+
+---
+
+class: middle, animated slideInRight
+
+# Ancien approche
+
+```JSON
+{
+  name: 'ACME Boomerang',
+  desc: 'Used by Coyote in <i>Zoom at the Top</i>, 1962',
+  price: {
+      currency: 'usd',
+      quantity: '1',
+  },
+  client: {
+      id: 42
+  }
+}
+```
+
+---
+
+class: middle, animated slideInRight
+
+# Nouvelle approche
+
+```JSON
+{
+  name: 'ACME Boomerang',
+  desc: 'Used by Coyote in <i>Zoom at the Top</i>, 1962',
+  price: {
+      currency: 'usd',
+      quantity: '1',
+  },
+  client: {
+      href: '/clients/42'
+  }
+}
+```
+
+---
+
+class: middle, center, animated slideInRight inverse
+
+# That's all folks !
+
+###.fa.fa-beer.big-icon.blue[]
+
+#### Created using <a href="http://remarkjs.com/">Remark.js</a>
+
 
 
     </textarea>
