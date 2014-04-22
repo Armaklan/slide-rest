@@ -2,17 +2,32 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         watch: {
-          scripts: {
-              files: ['*.*'],
-              options: {
-                livereload: true,
-              },
-          },
+            scripts: {
+                files: ['*.*'],
+                options: {
+                    livereload: true,
+                },
+            },
+        },
+        connect: {
+            server: {
+                options: {
+                    port: 8000,
+                    base: './',
+                    keepalive: true,
+                    livereload: true
+                }
+            }
+        },
+        concurrent: {
+            serve: ['watch', 'connect'],
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['concurrent:serve']);
 
 }
