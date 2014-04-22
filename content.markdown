@@ -1,7 +1,7 @@
-
 class: center, middle, animated slideInRight
 
 # Knowledge Sharing
+### 23 Avril 2014
 
 ---
 
