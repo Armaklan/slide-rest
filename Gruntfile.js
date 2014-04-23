@@ -17,10 +17,18 @@ module.exports = function(grunt) {
                     keepalive: true,
                     livereload: true
                 }
+            },
+            dist: {
+                options: {
+                    port: 8000,
+                    base: './',
+                    keepalive: true,
+                    livereload: false
+                }
             }
         },
         concurrent: {
-            serve: ['watch', 'connect'],
+            serve: ['watch', 'connect:server'],
         }
     });
 
@@ -29,5 +37,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('default', ['concurrent:serve']);
+    grunt.registerTask('serve', ['connect:dist']);
 
 }

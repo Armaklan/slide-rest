@@ -1,46 +1,5 @@
 class: center, middle, animated slideInRight
 
-# Knowledge Sharing
-### 23 Avril 2014
-
----
-
-class: center, middle, inverse, animated slideInRight
-
-.fa.fa-bar-chart-o.big-icon.blue[]
-
-# .red[14] Présentations
-# .red[40] Personnes
-
----
-
-class: center, middle, animated slideInRight
-
-![We need you !](img/need.jpg)
-
----
-
-class: center, middle, inverse animated slideInRight
-
- .fa.fa-question-circle.big-icon[]
-
-## .red[Sébastien Bouchet]
-## .blue[Lionel Zuber]
-
----
-
-class: center, middle, inverse animated slideInRight
-
-# Sujets ?
-
-.fa.fa-code-fork.big-icon[]
-
-## .grey[Technologique], .red[Fonctionnel], .blue[Managériale] !
-
----
-
-class: center, middle, animated slideInRight
-
 # N'oubliez pas le .red[ReST]
 
 .fa.fa-exchange.big-icon[]
@@ -510,7 +469,7 @@ class: middle, center, animated slideInRight inverse
 
 class: middle, center, animated slideInRight
 
-# Avantages .red[SOAP] !
+# Avantages .red[ReST] !
 .fa.fa-plus-circle.big-icon.blue[]
 ### Simplicité
 ### Performance
@@ -520,7 +479,7 @@ class: middle, center, animated slideInRight
 
 class: middle, center, animated slideInRight
 
-# Avantages .red[ReST] !
+# Avantages .red[SOAP] !
 .fa.fa-plus-circle.big-icon.blue[]
 ### Rigueur
 ### Contexte non HTTP (JMS, Pigeon, ...)
